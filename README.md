@@ -1,4 +1,4 @@
-# Programa Top v27 - Tiempo parcial
+# Programa Top v27git  - Tiempo parcial
 
 ## Mentores 👩🏻‍🏫👨🏼‍🏫
 - Sergio Jaramillo
