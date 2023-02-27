@@ -1,0 +1,17 @@
+{
+  "name": "first-steps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest src/",
+    "test:watch": "jest --watch src/",
+    "test:coverage": "jest --watch --coverage src/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.4.3"
+  }
+}

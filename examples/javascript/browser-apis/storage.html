@@ -25,18 +25,47 @@
       e.preventDefault();
       const todo = todoInput.value;
 
-
       if (todo) {
         const todoItem = document.createElement('li');
         todoItem.innerText = todo;
         todoList.appendChild(todoItem);
         todoInput.value = '';
+
+        // Add to local storage
+        const todos = localStorage.getItem('todos')
+        if(todos) {
+          const todosArray = JSON.parse(todos)
+          todosArray.push(todo)
+          localStorage.setItem('todos', JSON.stringify(todosArray))
+        } else {
+          localStorage.setItem('todos', JSON.stringify([todo]))
+        }
+      }
+    }
+
+    function loadTodos() {
+      const todos = localStorage.getItem('todos')
+
+      if(todos) {
+        const todosArray = JSON.parse(todos)
+        todosArray.forEach((todo) => {
+          const todoItem = document.createElement('li')
+          todoItem.innerHTML = todo
+          todoList.appendChild(todoItem)
+        })
       }
     }
 
     todoForm.addEventListener('submit', submit);
 
+    loadTodos()
   </script>
 </body>
 </html>
 
+<!-- localStorage.setItem('name', 'maria')
+localStorage.setItem("age", 30)
+localStorage.setItem('sesions', JSON.stringify(["programing", "testing"]))
+localStorage.setItem('person', JSON.stringify({name: 'maria'}))
+localStorage.removeItem('age')
+console.log(JSON.parse(localStorage.getItem('person'))) -->
