@@ -17,7 +17,7 @@ describe('Math' , () => {
       const result = sum(1, 'b')
       expect(result).toMatch(/Invalid/i)
     })
-  })
+  }) 
   
   describe('multiply', () => {
     it('should multiply to correctly', () => {
