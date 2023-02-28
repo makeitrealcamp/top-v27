@@ -1,0 +1,63 @@
+$background-item: #4263D3;
+$letters-color: white;
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 16px;
+  
+  @media(min-width: 768px){
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.container__item {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 20px;
+  padding: 20px;
+  border: 1px black solid;
+  border-radius: 16px;
+  background: $background-item;
+  
+  &:hover {
+    box-shadow: black 0px 5px 15px;
+  }
+  
+  img {
+    width: 200px;
+    height: 300px;
+  }
+  
+  p {
+    font-size: 24px;
+  }
+  
+  .container__item--buttons {
+    button {
+      font-size: 24px;
+    }
+    
+  }
+}
+
+@mixin style-button($backColor: grey){
+  background: $backColor;
+  color: $letters-color;
+  font-weight: 600;
+}
+
+.container__item--like{
+  @include style-button($backColor: rgb(115, 162, 45))
+} 
+
+.container__item--ignore{
+  @include style-button($backColor: rgb(53, 53, 174))
+}
