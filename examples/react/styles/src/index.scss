@@ -1,0 +1,21 @@
+/* abstracts */
+@import './stylesSASS/abstract/variables.scss';
+@import './stylesSASS/abstract/mixins.scss';
+
+
+/* base */
+@import './stylesSASS/base/base.scss';
+@import './stylesSASS/base/resets.scss';
+
+
+/* components */
+@import './stylesSASS/components/button.scss';
+
+/* pages */
+
+
+/* global */
+
+.primary-color {
+  color: blueviolet;
+}

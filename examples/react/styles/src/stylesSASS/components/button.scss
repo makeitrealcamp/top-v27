@@ -1,0 +1,11 @@
+.button-send {
+  cursor: pointer;
+  color: white;
+  padding: 10px 20px;
+  font-size: 25px;
+  font-family: var(--font-standard);
+
+  &:hover{
+    box-shadow: 0 10px 15px black;
+  }
+}
