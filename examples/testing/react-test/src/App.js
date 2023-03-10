@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import uuid from "uuid-random";
+import "./App.css";
+import { Books } from "./components/Books";
+import { Form } from "./components/Form";
 
 function App() {
+  const [books, setBooks] = useState([]);
+
+  function createBook(title, description) {
+    const book = {
+      id: uuid(),
+      title,
+      description,
+      votes: 0,
+    };
+
+    setBooks((prevBooks) => [...prevBooks, book]);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form createBook={createBook} />
+      <Books books={books} />
     </div>
   );
 }
