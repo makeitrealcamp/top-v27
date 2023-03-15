@@ -1,10 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Counter from './components/Counter';
-import Button from './components/Button';
-import Text from './components/Text'
-import InputText from './components/InputText'
-import { DECREMENT, INCREMENT } from './store'
+// import Counter from './components/Counter';
+// import Button from './components/Button';
+// import Text from './components/Text'
+// import InputText from './components/InputText'
+//import { DECREMENT, INCREMENT } from './store/reducers/Count.reducer'
+import Posts from './components/Posts';
 
 
 function App() {
@@ -12,11 +13,12 @@ function App() {
     <div className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Redux en react</h1>
-        <Counter/>
+        <Posts/>
+        {/* <Counter/>
         <Button typeAction={DECREMENT}>Decrementar</Button>
         <Button typeAction={INCREMENT}>Incrementar</Button>
         <Text/>
-        <InputText/>
+        <InputText/> */}
     </div>
   );
 }

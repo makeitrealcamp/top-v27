@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from "react-redux"
-import { CHANGE_TEXT } from "../store"
+import { CHANGE_TEXT } from "../store/reducers/Text.reducer"
+import React from "react"
 
 const InputText = () => {
   const dispatch = useDispatch()
-  const usernameStore = useSelector(state => state.username) 
+  const usernameStore = useSelector(state => state.textReducer.username) 
 
   return(
     <input

@@ -1,33 +1,26 @@
-import { legacy_createStore } from 'redux'
-export const INCREMENT = 'INCREMENT'
-export const DECREMENT = 'DECREMENT'
-export const CHANGE_TEXT = 'CHANGE_TEXT'
+import { legacy_createStore, combineReducers, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import textReducer from './reducers/Text.reducer'
+import countReducer from './reducers/Count.reducer'
+import postReducer from './reducers/Posts.reducer'
 
-const initialState = {
-  count: 100,
-  username: 'ingrese su nombre'
-}
 
-const reducer = (state = initialState, action) => {
-  switch(action.type) {
-    case INCREMENT:
-      return {
-        ...state,
-        count: state.count + 1
-      }
-    case DECREMENT:
-      return {
-        ...state,
-        count: state.count - 1
-      }
-    case CHANGE_TEXT:
-      return {
-        ...state,
-        username: action.payload
-      }
-    default:
-      return state
-  }
-}
+// function logger(store) {
+//   return function(next) {
+//     return function(action) {
+//       const prevState = store.getState()
+//       next(action)
+//       console.log('previous state:', prevState, action, 'next state:', store.getState())
+//     }
+//   }
+// }
 
-export const store = legacy_createStore(reducer)
+const rootReducer = combineReducers({
+  textReducer,
+  countReducer,
+  postReducer
+})
+
+const middleware = applyMiddleware(thunk)
+
+export const store = legacy_createStore(rootReducer, middleware)
