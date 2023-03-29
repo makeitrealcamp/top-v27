@@ -17,8 +17,3 @@ model Products {
   description String
   price       Int
 }
-
-// id
-// name
-// description
-// price
