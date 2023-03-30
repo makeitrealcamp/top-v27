@@ -4,7 +4,7 @@
   "description": "",
   "main": "./src/app.ts",
   "scripts": {
-    "dev": "ts-node-dev --respawn ./src/app.ts",
+    "dev": "ts-node-dev --transpile-only --respawn --exit-child ./src/app.ts",
     "build": "tsc",
     "start": "node ./dist/app.js"
   },

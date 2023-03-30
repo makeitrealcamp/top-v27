@@ -5,12 +5,34 @@ const prisma = new PrismaClient()
 // CRUD 
 // READ - GET
 export const getAllProducts = () => {
-  return prisma.products.findMany()
+  return prisma.product.findMany({
+    select: {
+      id: true,
+      name: true,
+      description: true,
+      price: true,
+      reviews: {
+        select: {
+          text: true,
+          rating: true
+        }
+      }
+    }
+    
+    // include: {
+    //   reviews: {
+    //     select: {
+    //       text: true,
+    //       rating: true
+    //     }
+    //   }
+    // }
+  })
 } 
 
 //Create - POST
 export const createProduct = (input: any) => {
-  return prisma.products.create({
+  return prisma.product.create({
     data: {
       name: input.name,
       description: input.description,
@@ -21,7 +43,7 @@ export const createProduct = (input: any) => {
 
 // ReadId - GET
 export const getProducById = (id: string) => {
-  return prisma.products.findUnique({
+  return prisma.product.findUnique({
     where: {
       id: id
     }
@@ -30,7 +52,7 @@ export const getProducById = (id: string) => {
 
 //Update - PUT
 export const updateProduct = (id: string, input: any) => {
-  return prisma.products.update({
+  return prisma.product.update({
     where: {
       id: id,
     },
@@ -43,7 +65,7 @@ export const updateProduct = (id: string, input: any) => {
 }
 
 export function deleteProduct(id: string) {
-  return prisma.products.delete({
+  return prisma.product.delete({
     where: {
       id: id,
     },

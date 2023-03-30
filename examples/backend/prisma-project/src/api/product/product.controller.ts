@@ -67,11 +67,11 @@ export const updateProductController = async (
   }
 }
 
-export async function deleteProductController(
+export const deleteProductController = async (
   req: Request,
   res: Response,
   next: NextFunction
-) {
+) => {
   try {
     const { id } = req.params;
     const product = await deleteProduct(id);
