@@ -16,7 +16,9 @@ export const getAllProducts = () => {
           text: true,
           rating: true
         }
-      }
+      },
+      createdAt: true,
+      updatedAt: true,
     }
     
     // include: {
@@ -46,6 +48,20 @@ export const getProducById = (id: string) => {
   return prisma.product.findUnique({
     where: {
       id: id
+    },
+    select: {
+      id: true,
+      name: true,
+      description: true,
+      price: true,
+      reviews: {
+        select: {
+          text: true,
+          rating: true
+        }
+      },
+      createdAt: true,
+      updatedAt: true,
     }
   })
 }

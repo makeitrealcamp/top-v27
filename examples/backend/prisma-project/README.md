@@ -21,3 +21,5 @@
 
 3. npx prisma migrate dev
 4. npx prisma studio
+
+5. npx prisma migrate reset // Comando para resetear la base de datos
