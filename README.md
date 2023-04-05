@@ -1,14 +1,19 @@
-# Programa Top v27git  - Tiempo parcial
+# Programa Top v27 - Tiempo Completo
 
 ## Mentores 👩🏻‍🏫👨🏼‍🏫
 - Sergio Jaramillo
 - Cristian Buitrago
+- Héctor Triana
 
 ## Estudiantes 👩🏻‍💻🧑🏼‍💻
-- Estudiante 1
-- Estudiante 2
-- Estudiante 3
-- ...
+- Oscar Javier Nuñez Navarro
+- Adrian Camilo Gil Franco
+- Diego Galeano
+- Nicolás Rodríguez Chaves
+- Michael Steven Sáenz
+- Andrés Camilo Vélez Rodas
+- Jean Carlo Vittory Jiménez Laguna
+- Sebastian Alvarez Henao
 
 ## Entregables proyecto grupal 💻🤝
 
@@ -34,7 +39,7 @@ Deberás presentar y aprobar las siguienes misiones:
 5. Proyecto Grupal.
 6. Proyecto Individual.
 
-Los lineamientos para los proyectos individuale y grupales son estos: 
+Los lineamientos para los proyectos individuales y grupales son estos:
 
 **El Proyecto Grupal debe tener:**
 
@@ -46,7 +51,7 @@ Los lineamientos para los proyectos individuale y grupales son estos:
     - Pagos
     - Presentar información en un mapa.
     - Tiempo Real (Web Sockets).
-- Debe estar desplegada en Internet (Netllify, Heroku, Vercel)
+- Debe estar desplegada en Internet (Netlify, Railway, Vercel)
 - Debe al menos tener pruebas end-to-end con Cypress.
 
 **El Proyecto Individual:**
@@ -54,9 +59,9 @@ Los lineamientos para los proyectos individuale y grupales son estos:
 - Utilizar react.js (mobile o web) y/o node.js
 - Autenticación de usuarios.
 - Debe incluir carga de imágenes.
-- Se debe presentar un video a modo de DEMO de no mas de 7 minutos donde el estudiantes exponga los siguientes temas:
+- Se debe presentar un video a modo de DEMO de no más de 7 minutos donde el estudiantes exponga los siguientes temas:
     1. Introducción (Nombre del proyecto, URL’s).
     2. Descripción de la aplicación.
     3. Metodología (Jira, Github, SCRUM, sprintes)
-    4. Tecnologías (React, Material, Express, [Socket.io](http://socket.io/), MongoDB, )
-    5. Diagrama de como esta distribuida su aplicacion (arquitectura) backend, frontend, servicios extras.
+    4. Tecnologías (React, MaterialUI o algún sistema de diseño, Express o algún framework en backend, si utiliza websockets: [Socket.io](http://socket.io/), MongoDB, Redis, MySQL, Postgres o alguna otra base de datos relacional o no relacional)
+    5. Diagrama de sistema que describa cómo distribuida su aplicación (arquitectura) backend, frontend y otros servicios extra.
