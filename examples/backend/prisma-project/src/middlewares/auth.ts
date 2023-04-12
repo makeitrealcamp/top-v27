@@ -1,9 +1,6 @@
-import jwt, {  } from 'jsonwebtoken'
 import { Request, Response, NextFunction } from 'express'
-
-export interface AuthUser extends Request {
-  user?: string  
-}
+import { verifyToken } from '../auth/auth.services'
+import { AuthUser } from '../auth/auth.types'
 
 export const auth = (req: AuthUser, res: Response, next: NextFunction) => {
   try {
@@ -22,7 +19,7 @@ export const auth = (req: AuthUser, res: Response, next: NextFunction) => {
     }
 
     //Reversión de la codificación del token
-    const { id } = jwt.verify(token, 's3cr3tk3y') as { id: string  }
+    const { id } = verifyToken(token) as { id: string  }
 
     req.user = id
 

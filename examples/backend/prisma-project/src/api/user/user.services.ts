@@ -38,11 +38,3 @@ export const deleteUser = (id: string) => {
     }
   })
 }
-
-export const login = (email: string) => {
-  return prisma.user.findUnique({
-    where: {
-      email: email
-    }
-  })
-}
