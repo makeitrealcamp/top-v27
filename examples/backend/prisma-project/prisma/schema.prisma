@@ -30,3 +30,13 @@ model Review {
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 }
+
+model User {
+  id        String   @id @default(cuid())
+  firstname String
+  lastname  String
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
