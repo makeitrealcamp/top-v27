@@ -100,7 +100,7 @@ export const updateUserController = async (
   res: Response
 ) => {
   try { 
-    const id  = req.user ? req.user : '';
+    const id  = req.user ? req.user : ''
 
     const user = await getUserById(id);
 
