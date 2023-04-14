@@ -4,6 +4,8 @@ import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import { login } from '../auth.services';
 import { signToken } from '../auth.services';
+import { sendNodeMailer } from '../../config/nodemailer';
+import { welcomeEmail } from '../../utils/emails';
 
 export const singupController = async (
   req: Request,
@@ -18,6 +20,8 @@ export const singupController = async (
     const user = await createUser({...req.body, password: encPassword})
 
     const token = signToken({ id: user.id })
+
+    await sendNodeMailer(welcomeEmail(user))
 
     res.status(201).json({ message: 'User created', data: { firstname, lastname, email }, token })
   } catch(error: any) {
