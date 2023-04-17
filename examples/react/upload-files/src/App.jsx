@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import './App.css'
+import axios from 'axios'
+
 
 function App() {
   const [username, setUsername] = useState('')
@@ -22,13 +24,13 @@ function App() {
       file_0: 'f34fewrgerger',
       file_1: 'oaifh0394gnienrgperg'
     } */
-    const data = new FormData()
     data.append('username', username)
+    const data = new FormData()
     for (let i=0; i < file.length; i++){
       data.append(`file:${i}`, file[i], file[i].name, )
     }
 
-    const response = axios.post('http://localhost:8080',
+    const response = await axios.post('http://localhost:8080/test-formdata',
       data,
       {
         headers: {
@@ -41,8 +43,13 @@ function App() {
 
   const handleChange = (e) => {
     //console.dir(e.target.file[0]);
+    // if(e.target.files.size < 1024 * 1024 * 5){
+    // } else {
+    //   alert('la imagen debe ser menor a 5mb')
+    // }
     readFile(e.target.files[0])
     setFile(e.target.files)
+    // img < 5mb
   }
 
   return (
