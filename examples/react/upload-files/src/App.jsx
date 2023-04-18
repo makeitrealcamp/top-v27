@@ -24,13 +24,13 @@ function App() {
       file_0: 'f34fewrgerger',
       file_1: 'oaifh0394gnienrgperg'
     } */
-    data.append('username', username)
     const data = new FormData()
+    data.append('username', username)
     for (let i=0; i < file.length; i++){
       data.append(`file:${i}`, file[i], file[i].name, )
     }
 
-    const response = await axios.post('http://localhost:8080/test-formdata',
+    const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}test-formdata`,
       data,
       {
         headers: {
