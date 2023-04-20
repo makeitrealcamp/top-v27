@@ -1,0 +1,58 @@
+.aboutcard {
+  margin-top: 120px;
+  display: grid;
+}
+.aboutcard__wrapper {
+  perspective: 70rem;
+}
+.aboutcard__ticket {
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+  width: 500px;
+  height: 290px;
+  aspect-ratio: 18/9;
+  border-radius: 8px;
+  border: 2px solid rgba(94, 145, 255, 0.435);
+  position: relative;
+}
+.ticket--info {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+  color: rgb(22, 96, 255);
+}
+.aboutcard__ticket--info {
+  display: flex;
+  h3 {
+    color: rgb(0, 81, 255);
+    font-size: 22px;
+  }
+  .ticket--img {
+    img {
+      height: 290px;
+      border-radius: 8px 0 0 8px;
+    }
+  }
+}
+.aboutcard__ticket--bg {
+  top: 0;
+  background: rgba(94, 145, 255, 0.3);
+  position: absolute;
+  inset: 0;
+  filter: blur(20px);
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+.ticket--icons {
+  font-size: 35px;
+  display: flex;
+  justify-content: space-between;
+  a {
+    color: rgb(0, 81, 255);
+    &:visited {
+      color: rgb(0, 81, 255);
+    }
+  }
+}

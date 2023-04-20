@@ -1,0 +1,20 @@
+.cartDetails {
+  border: 5px solid rgb(94, 145, 255);
+  padding: 20px auto;
+  height: 500px;
+  overflow: scroll;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 8px;
+}
+.cartdetailsContainer {
+  max-width: 1060px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+.cartDetails__totals {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  font-size: 20px;
+}

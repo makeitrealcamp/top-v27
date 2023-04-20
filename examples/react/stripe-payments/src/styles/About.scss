@@ -1,0 +1,24 @@
+.about {
+  max-width: 1060px;
+  margin: 0 auto;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.about__info {
+  margin-top: 30px;
+  color: rgb(0, 81, 255);
+  font-size: 18px;
+  line-height: 1.5;
+  ul {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    li {
+      font-size: 25px;
+      font-weight: 600;
+    }
+  }
+}
