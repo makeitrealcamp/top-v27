@@ -4,7 +4,9 @@ import seedReview from "./reviewSeeder";
 
 const prisma = new PrismaClient()
 
-const seeders = [ seedProduct, seedReview ]
+const seeders = [ seedProduct
+  // , seedReview 
+]
 
 const seed = async() => {
   for(const seeder of seeders) {

@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
-
 import { getAllProducts, createProduct, getProducById, updateProduct, deleteProduct } from './product.services';
+import { clientRedis } from '../../config/redis';
 
 export const getAllProductsController = async (
   req: Request,
@@ -8,7 +8,19 @@ export const getAllProductsController = async (
   next: NextFunction
 ) => {
   try {
+    const reply = await clientRedis.get('redisProducts')
+
+    if(reply){
+      return res.status(200).json({ message: 'Products found', data: JSON.parse(reply) })
+    }
+
     const products = await getAllProducts()
+
+    const expires = 60 * 60 * 24 // 24 horas
+    await clientRedis.set('redisProducts', JSON.stringify(products), {
+      EX: expires
+    })
+
     res.status(200).json({ message: 'Products found', data: products })
   } catch(error: any) {
     res.status(500).json({ message: error.message })
