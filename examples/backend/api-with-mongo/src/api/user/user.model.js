@@ -30,6 +30,10 @@ const userSchema = new Schema(
         message: 'email already exist'
       }]
     },
+    password: {
+      type: String,
+      required: true
+    },
     todos: {
       type: [{ type: Schema.Types.ObjectId, ref: 'todo' }],
       required: false

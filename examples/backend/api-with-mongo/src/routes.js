@@ -1,7 +1,9 @@
+const healthcheck = require('./api/healthcheck')
 const todo = require('./api/todo')
 const user = require('./api/user')
 
 const routes = (app) => {
+  app.use('/api/healthcheck', healthcheck)
   app.use('/api/todos', todo)
   app.use('/api/users', user)
 }

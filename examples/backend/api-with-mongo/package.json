@@ -4,20 +4,29 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cross-env MONGO_DB_URI=mongodb+srv://root:1234@cluster0.vwekapk.mongodb.net/top27-test jest --watch --detectOpenHandles",
+    "test:coverage": "npm test -- --coverage",
     "dev": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "colors": "^1.4.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mongoose": "^7.0.5"
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.5",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.2"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
+    "jest": "^29.5.0",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "supertest": "^6.3.3"
   }
 }
