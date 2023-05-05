@@ -1,18 +1,31 @@
-import { useEffect, useState } from 'react';
-import { Text, View, ScrollView, StyleSheet, FlatList, Platform } from 'react-native';
-import Character from '../components/Cards/Character'
+import { useEffect, useState } from "react";
+import {
+  Text,
+  View,
+  ScrollView,
+  StyleSheet,
+  FlatList,
+  Platform,
+} from "react-native";
+import Character from "../components/Cards/Character";
+import axios from "axios";
 
 const Characters = ({ navigation }) => {
+  const [characters, setCharacters] = useState({});
+  console.log("🚀 ~ file: Characters.js:15 ~ Characters ~ characters:", characters)
 
+  useEffect(() => {
+    const charsFetch = async () => {
+      const response = await axios.get("https://rickandmortyapi.com/api/character");
+      setCharacters(response.data.results)
+    };
+    charsFetch();
+  }, []);
 
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Characters</Text>
-      {/*User el Flatlist*/}
-      <Character/>
-      <Character/>
-      <Character/>
-      <Character/>
+      <FlatList data={characters} renderItem={(char)=><Character name={char.name} keyExtractor={char.id}/>}/>
     </View>
   );
 };
@@ -20,9 +33,9 @@ const Characters = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#292929',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#292929",
+    alignItems: "center",
+    justifyContent: "center",
   },
   searchBar: {
     flex: 1,
@@ -31,7 +44,7 @@ const styles = StyleSheet.create({
     flex: 3,
   },
   text: {
-    color: 'white',
+    color: "white",
     fontSize: 30,
     marginBottom: 10,
   },

@@ -1,8 +1,12 @@
 import { View, Text, StyleSheet, ImageBackground, Button, TouchableOpacity } from 'react-native';
 
 const CharCard = ({ name, image, id, navigate, page }) => {
-  const image = 'https://rickandmortyapi.com/character/avatar/85.jpeg'
-  const name = 'Cyclops Morty'
+// console.log("🚀 ~ file: Character.js:4 ~ CharCard ~ page:", page)
+// console.log("🚀 ~ file: Character.js:4 ~ CharCard ~ navigate:", navigate)
+// console.log("🚀 ~ file: Character.js:4 ~ CharCard ~ id:", id)
+// console.log("🚀 ~ file: Character.js:4 ~ CharCard ~ image:", image)
+console.log("🚀 ~ file: Character.js:4 ~ CharCard ~ name:", name)
+
 
   return (
     <View>
