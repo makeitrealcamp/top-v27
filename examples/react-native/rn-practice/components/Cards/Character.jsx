@@ -1,20 +1,29 @@
+import React from 'react';
 import { View, Text, StyleSheet, ImageBackground, Button, TouchableOpacity } from 'react-native';
 
 const CharCard = ({ name, image, id, navigate, page }) => {
-  const image = 'https://rickandmortyapi.com/character/avatar/85.jpeg'
-  const name = 'Cyclops Morty'
+  const handlePress = () => {
+    navigate('Details', { itemId: id });
+  };
 
   return (
     <View>
-      <View style={styles.card}>
-        <View style={styles.row}>
-          <ImageBackground source={{ uri: image }} style={styles.bgImage}>
-            <View style={styles.titleContainer}>
-              <Text style={styles.title}>{name}</Text>
-            </View>
-          </ImageBackground>
+      <TouchableOpacity style={styles.item} onPress={handlePress}>
+        <View style={styles.card}>
+          <View style={styles.row}>
+            <ImageBackground source={{ uri: image }} style={styles.bgImage}>
+              <View style={styles.titleContainer}>
+                <Text style={styles.title}>{name}</Text>
+              </View>
+            </ImageBackground>
+          </View>
         </View>
-      </View>
+      </TouchableOpacity>
+      {
+        page === 'Detail' && (
+          <Button title="Add to Fav ❤️" onPress={handlePress} />
+        )
+      }
     </View>
   );
 };
