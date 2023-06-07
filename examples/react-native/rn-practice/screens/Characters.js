@@ -11,13 +11,13 @@ import Character from "../components/Cards/Character";
 import axios from "axios";
 
 const Characters = ({ navigation }) => {
-  const [characters, setCharacters] = useState({});
-  console.log("🚀 ~ file: Characters.js:15 ~ Characters ~ characters:", characters)
-
+  const [characters, setCharacters] = useState([]);
   useEffect(() => {
     const charsFetch = async () => {
-      const response = await axios.get("https://rickandmortyapi.com/api/character");
-      setCharacters(response.data.results)
+      const response = await axios.get(
+        "https://rickandmortyapi.com/api/character"
+      );
+      setCharacters(response.data.results);
     };
     charsFetch();
   }, []);
@@ -25,7 +25,18 @@ const Characters = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Characters</Text>
-      <FlatList data={characters} renderItem={(char)=><Character name={char.name} keyExtractor={char.id}/>}/>
+      <FlatList
+        data={characters}
+        keyExtractor={item => item.id.toString()}
+        renderItem={({ item }) => (
+          <Character
+            name={item.name}
+            image={item.image}
+            id={item.id}
+            navigation={navigation}
+          />
+        )}
+      />
     </View>
   );
 };
